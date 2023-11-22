@@ -1,0 +1,36 @@
+---
+import Pagination from "@/components/Paginator";
+import PostPreview from "@/components/blog/PostPreview";
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	page: Page<CollectionEntry<"post">>;
+	paginationProps: {
+		nextUrl?: {
+			url: string;
+			text: string;
+		};
+		prevUrl?: {
+			url: string;
+			text: string;
+		};
+	};
+}
+
+const { page, paginationProps } = Astro.props;
+---
+
+<section aria-label="Blog post list">
+	<h1 class="title mb-6">Posts</h1>
+	<ul class="space-y-12 text-start">
+		{
+			page.data.map((p) => (
+				<li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
+					<PostPreview post={p} as="h2" withDesc withCover />
+				</li>
+			))
+		}
+	</ul>
+	<Pagination {...paginationProps} />
+</section>

@@ -11,10 +11,12 @@ import { siteConfig } from "@/site-config";
 
 interface Props {
 	meta: SiteMeta;
+	hideHeader?: boolean;
 }
 
 const {
 	meta: { title, description = siteConfig.description, ogImage, articleDate },
+	hideHeader = false,
 } = Astro.props;
 ---
 
@@ -22,9 +24,9 @@ const {
 	<head>
 		<BaseHead title={title} description={description} ogImage={ogImage} articleDate={articleDate} />
 		{
-			/* 
+			/*
 			Fallback set to none in non-supporting browsers -> https://docs.astro.build/en/guides/view-transitions/#fallback-control
-			This is set to false by default in src/site.config.ts 
+			This is set to false by default in src/site.config.ts
 			*/
 		}
 		{siteConfig.includeViewTransitions && <ViewTransitions fallback="none" />}
@@ -32,7 +34,7 @@ const {
 	<body>
 		<ThemeProvider />
 		<SkipLink />
-		<Header />
+		{!hideHeader && <Header />}
 		<main id="main">
 			<slot />
 		</main>

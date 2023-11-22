@@ -2,20 +2,41 @@
 import type { CollectionEntry } from "astro:content";
 import type { HTMLTag, Polymorphic } from "astro/types";
 import FormattedDate from "../FormattedDate.astro";
+import { Image } from "astro:assets";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 	post: CollectionEntry<"post">;
 	withDesc?: boolean;
+	withCover?: boolean;
 };
 
-const { post, as: Tag = "div", withDesc = false } = Astro.props;
+const { post, as: Tag = "div", withDesc = false, withCover = false } = Astro.props;
 const postDate = post.data.updatedDate ?? post.data.publishDate;
 ---
 
-<FormattedDate date={postDate} class="min-w-[120px] text-gray-500" />
-<Tag>
-	<a href={`/posts/${post.slug}/`} class="cactus-link" rel="prefetch">
-		{post.data.title}
-	</a>
-</Tag>
-{withDesc && <q class="line-clamp-3 block italic">{post.data.description}</q>}
+<div class="flex flex-col">
+	{
+		withCover && post.data.coverImage && (
+			<div class="mb-3 max-h-[256px] w-full rounded-md bg-gradient-to-b from-zinc-800 to-zinc-700 px-0.5 py-0.5 transition-all duration-150 ease-linear hover:from-gradient-from hover:to-gradient-to">
+				<a href={`/posts/${post.slug}/`} class="block h-fit" rel="prefetch">
+					<Image
+						src={post.data.coverImage.src}
+						alt={post.data.coverImage.alt}
+						class="max-h-[250px] rounded-[6px]"
+						loading="eager"
+						fetchpriority="high"
+					/>
+				</a>
+			</div>
+		)
+	}
+	<div class="flex flex-col flex-wrap justify-between gap-y-1">
+		<Tag>
+			<a href={`/posts/${post.slug}/`} class="link text-[14px]" rel="prefetch">
+				{post.data.title}
+			</a>
+		</Tag>
+		<FormattedDate date={postDate} class="min-w-[120px] text-gray-500" />
+	</div>
+	{withDesc && <q class="mt-2 line-clamp-3 block italic">{post.data.description}</q>}
+</div>

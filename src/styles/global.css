@@ -12,6 +12,9 @@
 		--theme-accent: 351deg 66% 48%;
 		--theme-accent-2: 0deg 0% 7%;
 		--theme-quote: 351deg 66% 48%;
+
+		--theme-gradient-from: 351deg 66% 48%;
+		--theme-gradient-to: 0deg 0% 7%;
 	}
 
 	:root.dark {
@@ -22,6 +25,9 @@
 		--theme-accent: 159deg 64% 45%;
 		--theme-accent-2: 0deg 0% 93%;
 		--theme-quote: 102deg 100% 86%;
+
+		--theme-gradient-from: 159deg 64% 45%;
+		--theme-gradient-to: 0deg 0% 93%;
 	}
 
 	html {

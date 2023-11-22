@@ -24,8 +24,10 @@ export default {
 				textColor: "hsl(var(--theme-text) / <alpha-value>)",
 				link: "hsl(var(--theme-link) / <alpha-value>)",
 				accent: "hsl(var(--theme-accent) / <alpha-value>)",
-				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
 				quote: "hsl(var(--theme-quote) / <alpha-value>)",
+				"accent-2": "hsl(var(--theme-accent-2) / <alpha-value>)",
+				"gradient-from": "hsl(var(--theme-gradient-from) / <alpha-value>)",
+				"gradient-to": "hsl(var(--theme-gradient-to) / <alpha-value>)",
 			},
 			fontFamily: {
 				// Add any custom fonts here
@@ -55,7 +57,7 @@ export default {
 				DEFAULT: {
 					css: {
 						a: {
-							"@apply cactus-link no-underline": "",
+							"@apply link no-underline": "",
 						},
 						strong: {
 							fontWeight: "700",
@@ -116,7 +118,7 @@ export default {
 		require("@tailwindcss/aspect-ratio"),
 		plugin(function ({ addComponents }) {
 			addComponents({
-				".cactus-link": {
+				".link": {
 					"@apply bg-[size:100%_6px] bg-bottom bg-repeat-x": {},
 					backgroundImage:
 						"linear-gradient(transparent,transparent 5px,hsl(var(--theme-text)) 5px,hsl(var(--theme-text)))",

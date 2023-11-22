@@ -1,0 +1,113 @@
+---
+import PageLayout from "@/layouts/Base";
+
+const mentionTech: Array<{ title: string; desc: string; href: string }> = [
+	{
+		title: "React",
+		desc: "The library for web and native user interfaces",
+		href: "https://react.dev",
+	},
+	{
+		title: "Vue",
+		desc: "The Progressive JavaScript Framework",
+		href: "https://vuejs.org",
+	},
+	{
+		title: "Next",
+		desc: "Next.js is a React framework for building full-stack web applications.",
+		href: "https://nextjs.org",
+	},
+	{
+		title: "Nuxt",
+		desc: "Create performant and production-grade vue full-stack web apps",
+		href: "https://nuxt.com",
+	},
+	{
+		title: "Astro",
+		desc: "Build fast websites, faster.",
+		href: "https://astro.build",
+	},
+	{
+		title: "Svelte",
+		desc: "Cybernetically enhanced web apps",
+		href: "https://svelte.dev",
+	},
+];
+
+const blogTech: Array<{ title: string; desc: string; href: string }> = [
+	{
+		title: "Astro",
+		desc: "Build fast websites, faster.",
+		href: "https://astro.build",
+	},
+	{
+		title: "Astro Assets",
+		desc: "Built-in optimized asset support.",
+		href: "https://docs.astro.build/en/guides/assets/",
+	},
+	{
+		title: "Astro Icon",
+		desc: "An easy to use Icon component for Astro.",
+		href: "https://github.com/natemoo-re/astro-icon#readme",
+	},
+	{
+		title: "Tailwind CSS",
+		desc: "Rapidly build modern websites without ever leaving your HTML.",
+		href: "https://tailwindcss.com",
+	},
+	{
+		title: "Markdown",
+		desc: "Simple and easy-to-use markup language.",
+		href: "https://www.markdownguide.org/",
+	},
+	{
+		title: "MDX",
+		desc: "Markdown for the component era.",
+		href: "https://mdxjs.com/",
+	},
+	{
+		title: "Satori",
+		desc: "Generating png Open Graph images for blog posts.",
+		href: "https://github.com/vercel/satori",
+	},
+	{
+		title: "Pagefind",
+		desc: "A fully static search library.",
+		href: "https://pagefind.app/",
+	},
+];
+---
+
+<PageLayout meta={{ title: "Technologies" }}>
+	<section class="mt-8">
+		<h2 class="title mb-4 text-xl">This blog may mention technologies such as:</h2>
+		<ul class="space-y-4 sm:space-y-2">
+			{
+				mentionTech.map(({ href, title, desc }) => (
+					<li>
+						<a href={href} target="_blank" rel="noopener noreferrer" class="link inline-block">
+							{title}
+						</a>
+						:<p class="inline-block sm:mt-2">{desc}</p>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+
+	<section class="mt-20">
+		<h2 class="title mb-4 text-xl">The blog is built with:</h2>
+		<ul class="space-y-4 sm:space-y-2">
+			{
+				blogTech.map(({ href, title, desc }) => (
+					<li>
+						<a href={href} target="_blank" rel="noopener noreferrer" class="link inline-block">
+							{title}
+						</a>
+						:<p class="inline-block sm:mt-2">{desc}</p>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+</PageLayout>

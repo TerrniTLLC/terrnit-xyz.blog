@@ -1,8 +1,5 @@
 ---
-import { Image } from "astro:assets";
-
 import PageLayout from "@/layouts/Base";
-import aboutImg from "@/assets/about-astro.png";
 
 const meta = {
 	title: "Oops! You found a missing page!",
@@ -10,15 +7,10 @@ const meta = {
 };
 ---
 
-<PageLayout meta={meta}>
-	<h1 class="title mb-6">404 | Oops something went wrong</h1>
-	<p class="mb-8">Please use the navigation to find your way back</p>
-	<div class="my-4 grid justify-center">
-		<Image
-			class="rotate-180"
-			src={aboutImg}
-			alt="A cartoon cactus looking at the 'Astro.build' logo"
-			loading="eager"
-		/>
-	</div>
+<PageLayout meta={meta} hideHeader>
+	<section class="flex h-[70vh] flex-col items-start justify-center">
+		<h1 class="title mb-4 text-2xl text-accent md:text-3xl">404s and heartbreaks</h1>
+		<p class="mb-8">We could't find the page you were looking for. Check for right url</p>
+		<a href="/" class="link my-4 block w-fit" aria-label="Go back to main page">Go back</a>
+	</section>
 </PageLayout>
