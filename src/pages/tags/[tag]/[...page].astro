@@ -1,9 +1,9 @@
 ---
 import type { Page, GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
-import PageLayout from "@/layouts/Base";
+import PageLayout from "@/layouts/Base.astro";
 import { getAllPosts, getUniqueTags, sortMDByDate } from "@/utils";
-import BlogPostList from "@/components/BlogPostList";
+import BlogPostList from "@/components/BlogPostList.astro";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 	const allPosts = await getAllPosts();
