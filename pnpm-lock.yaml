@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.0.0
     version: 3.0.0
   '@astrojs/sitemap':
-    specifier: ^3.0.1
-    version: 3.0.1
+    specifier: ^3.1.6
+    version: 3.1.6
   '@astrojs/tailwind':
     specifier: ^5.0.1
     version: 5.0.1(astro@3.6.4)(tailwindcss@3.3.3)
@@ -311,11 +311,12 @@ packages:
       kleur: 4.1.5
     dev: false
 
-  /@astrojs/sitemap@3.0.1:
-    resolution: {integrity: sha512-ErCthOQF0Yt6KkvaS+v/7CM6TxztOPHJjla4cbM3fBAFsDQbCS3tvoWSMqPJtmTFiy7veQ1eC5gH58FhPe85zg==}
+  /@astrojs/sitemap@3.1.6:
+    resolution: {integrity: sha512-1Qp2NvAzVImqA6y+LubKi1DVhve/hXXgFvB0szxiipzh7BvtuKe4oJJ9dXSqaubaTkt4nMa6dv6RCCAYeB6xaQ==}
     dependencies:
-      sitemap: 7.1.1
-      zod: 3.21.1
+      sitemap: 7.1.2
+      stream-replace-string: 2.0.0
+      zod: 3.23.8
     dev: false
 
   /@astrojs/tailwind@5.0.1(astro@3.6.4)(tailwindcss@3.3.3):
@@ -6101,8 +6102,8 @@ packages:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
     dev: false
 
-  /sitemap@7.1.1:
-    resolution: {integrity: sha512-mK3aFtjz4VdJN0igpIJrinf3EO8U8mxOPsTBzSsy06UtjZQJ3YY3o3Xa7zSc5nMqcMrRwlChHZ18Kxg0caiPBg==}
+  /sitemap@7.1.2:
+    resolution: {integrity: sha512-ARCqzHJ0p4gWt+j7NlU5eDlIO9+Rkr/JhPFZKKQ1l5GCus7rJH4UdrlVAh0xC/gDS/Qir2UMxqYNHtsKr2rpCw==}
     engines: {node: '>=12.0.0', npm: '>=5.6.0'}
     hasBin: true
     dependencies:
@@ -6164,6 +6165,10 @@ packages:
       debug: 2.6.9
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /stream-replace-string@2.0.0:
+    resolution: {integrity: sha512-TlnjJ1C0QrmxRNrON00JvaFFlNh5TTG00APw23j74ET7gkQpTASi6/L2fuiav8pzK715HXtUeClpBTw2NPSn6w==}
     dev: false
 
   /streamx@2.15.1:
@@ -7167,12 +7172,12 @@ packages:
     resolution: {integrity: sha512-N+d4UJSJbt/R3wqY7Coqs5pcV0aUj2j9IaQ3rNj9bVCLld8tTGKRa2USARjnvZJWVx1NDmQev8EknoczaOQDOA==}
     dev: false
 
-  /zod@3.21.1:
-    resolution: {integrity: sha512-+dTu2m6gmCbO9Ahm4ZBDapx2O6ZY9QSPXst2WXjcznPMwf2YNpn3RevLx4KkZp1OPW/ouFcoBtBzFz/LeY69oA==}
-    dev: false
-
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: false
+
+  /zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
     dev: false
 
   /zwitch@2.0.4:
